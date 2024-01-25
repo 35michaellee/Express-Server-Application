@@ -1,0 +1,28 @@
+head
+  title= "posts"
+  style.
+    body {
+      font-family: Arial, sans-serif; /* Set a font-family for better rendering */
+    }
+body
+  each post in message
+    h1= post.title
+    h2= `user is ${post.user}`
+    p= post.summary
+
+  //- Form for creating new posts
+  form(action="/posts", method="POST")
+    label(for="user") User:
+    input(type="text", name="user", required)
+    br
+    label(for="title") Title:
+    input(type="text", name="title", required)
+    br
+    label(for="summary") Summary:
+    textarea(name="summary", required)
+    br
+    input(type="submit", value="Create Post")
+
+  //- Display error message
+  if (error)
+    p.error= error
