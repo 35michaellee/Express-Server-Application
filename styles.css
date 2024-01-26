@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #77b1e1;
+    margin: 0;
+    padding: 20px; /* Add some padding to the body for better spacing */
+  }
+  
+  form {
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Increased form width for better readability */
+    margin: auto;
+    padding: 20px;
+    background-color: #fff; /* Added background color to the form */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    margin-bottom: 8px;
+  }
+  
+  input {
+    padding: 10px; /* Slightly reduced input padding */
+    margin-bottom: 16px;
+  }
+  
+  button {
+    padding: 12px; /* Slightly increased button padding */
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .post-container {
+    background-color: #408585;
+    margin: 20px auto; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+  }
+  
+  .post-container h1 {
+    font-size: 24px;
+    margin-bottom: 12px; 
+  }
+  
+  .post-container h2 {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 16px;
+  }
+  
+  .post-container p {
+    font-size: 16px;
+    line-height: 1.6; /* Slightly increased line height for better readability */
+  }
+/* Facebook-like styling for h1 with class "facebook-header" */
+h1.facebook-header {
+    font-family: 'Arial', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    color: #1877f2;
+    letter-spacing: -2px;
+    margin: 0;
+  }
+.navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Set background color */
+    padding: 10px; /* Add padding for better appearance */
+}
+
+.navbar a {
+    color: #fff; 
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; 
+}
+
+/* Change link color on hover */
+.navbar a:hover {
+    color: #ffcc00; 
+}

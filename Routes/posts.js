@@ -19,12 +19,14 @@ router.post('/', (req, res) => {
     console.log('Received POST request:', req.body);
 
     const userName = req.body.user;
+    console.log('User:', userName);
 
-    const userExists = users.some(user => user.name === userName);
-    if (!userExists) {
-        const error = 'User not found';
-        return res.status(404).render('index', { title: 'Hey', message: posts, error });
-    }
+    // const userExists = users.some(user => user.name === userName);
+    // if (!userExists) {
+    //     console.log('User not found');
+    //     const error = 'User not found';
+    //     return res.status(404).render('index', { title: 'Hey', message: posts, error });
+    // }
 
     const newPost = {
         user: userName,
@@ -33,13 +35,14 @@ router.post('/', (req, res) => {
 
     posts.push(newPost);
 
+    console.log('Post created successfully:', newPost);
+
     // If you prefer to respond with JSON, uncomment the next line
     // res.json(newPost);
 
     // If you prefer to render the index view, you can redirect to the posts route
     res.redirect('/posts');
 });
-
 router.delete('/:userName/:postIndex', (req, res) => {
     const userName = req.params.userName;
     const postIndex = req.params.postIndex;

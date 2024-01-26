@@ -1,14 +1,16 @@
 head
   title= "posts"
-  style.
-    body {
-      font-family: Arial, sans-serif; /* Set a font-family for better rendering */
-    }
+  link(rel='stylesheet', href='./styles.css')
+
+// body section of your Pug file
 body
+  h1.facebook-header countenanceOpus
+
   each post in message
-    h1= post.title
-    h2= `user is ${post.user}`
-    p= post.summary
+    .post-container
+      h1= post.title
+      h2= `user is ${post.user}`
+      p= post.summary
 
   //- Form for creating new posts
   form(action="/posts", method="POST")
@@ -26,3 +28,11 @@ body
   //- Display error message
   if (error)
     p.error= error
+
+  // Container for the navigation bar
+  .navbar
+    // Link to /users
+    a(href='/users') Go to Users
+
+    // Link to /comments
+    a(href='/comments') Go to Comments

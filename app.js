@@ -1,7 +1,8 @@
 const express = require('express');
+const path = require('path');
 
 const loggerMiddleware = require('./Middleware/loggerMiddleware');
-const authMiddleware = require('./Middleware/authMiddleware');
+//const authMiddleware = require('./Middleware/authMiddleware');
 const bodyParser = require('body-parser');
 
 const usersRoutes = require('./Routes/users');
@@ -12,9 +13,15 @@ const commentsRoutes = require('./Routes/comments');
 const app = express();
 
 const port = 3000;
+// Serve static files from the root directory
+app.use(express.static(path.join(__dirname)));
 //set up engine 
 app.set('view engine', 'pug');
 app.set('views', __dirname);
+
+
+// Your routes and other middleware go here
+
 
 // Middleware
 app.use(loggerMiddleware);
